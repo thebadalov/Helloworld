@@ -1,12 +1,19 @@
-FROM maven:3-jdk-8-alpine as builder
-  
-COPY . /data/springboot-helloworld
-WORKDIR /data/springboot-helloworld
-RUN ["mvn", "clean", "install", "-Dmaven.test.skip=true"]
+FROM openjdk:8
 
-FROM openjdk:8-alpine
+WORKDIR /home/hello-world
 
-WORKDIR /data
-COPY --from=builder /data/springboot-helloworld/target/*.jar ./app.jar
-EXPOSE 8080
-CMD ["java", "-jar", "app.jar"]
+COPY Helloworld.java /home/hello-world
+
+#Run apk add update
+
+#Run apk add javac
+
+#Run apk add openjdk8
+
+ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+ENV PATH $PATH:$JAVA_HOME/bin
+
+RUN javac Helloworld.java
+
+ENTRYPOINT java Helloworld
