@@ -1,19 +1,13 @@
-FROM openjdk:8
+FROM /home/thebadalov/eclipse-workspace/Helloworld:latest
 
-WORKDIR /home/hello-world
+#WORKDIR /home/hello-world
 
-COPY Helloworld.java /home/hello-world
+#COPY Helloworld.java /home/hello-world
 
-#Run apk add update
+#ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
 
-#Run apk add javac
+#ENV PATH $PATH:$JAVA_HOME/bin
 
-#Run apk add openjdk8
+#RUN javac Helloworld.java
 
-ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
-
-ENV PATH $PATH:$JAVA_HOME/bin
-
-RUN javac Helloworld.java
-
-ENTRYPOINT java Helloworld
+#ENTRYPOINT java Helloworld
