@@ -1,4 +1,4 @@
-FROM /home/thebadalov/eclipse-workspace/Helloworld:latest
+FROM /home/thebadalov/eclipse-workspace/Helloworld:1
 
 #WORKDIR /home/hello-world
 
