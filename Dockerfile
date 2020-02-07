@@ -1,4 +1,4 @@
-FROM /home/thebadalov/eclipse-workspace/Helloworld:1
+FROM openjdk
 
 #WORKDIR /home/hello-world
 
